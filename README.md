@@ -35,7 +35,7 @@ cd lazy_mans_snes_reset
 
 # Programming the ATTiny13A
 Arduino Uno ----> ATTiny13A
-
+```
 
      13    11
   5V  | 12  |
@@ -50,6 +50,7 @@ __8___7__6__5__
   |        |
   10      GND
      
+```
 
 In your Arduino IDE, Go to:
 Tools ->  Ports  
