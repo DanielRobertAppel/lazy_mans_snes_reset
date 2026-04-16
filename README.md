@@ -64,7 +64,7 @@ avrdude -F -p t13 -P/dev/ttyACM0 -b 19200 -c stk500v1 -U lfuse:w:0x7a:m -U hfuse
 
 
 
-# Advanced (Making your own changes to the attiny13a code:
+# Advanced (Making your own changes to the attiny13a code)
 ## Reqired Software
 ```
 sudo apt get install avr-libc gcc-avr avrdude git make gcc
