@@ -16,48 +16,63 @@ This repository contains everything you need to build your own & become lazy!
  - Some wire, soldering iron, SNES (duh..)
 
 ## Software
- - Clone git repository & switch to directory using: 
+ - Assuming env: Ubuntu 24.04, using an Arduino Uno
+ - Install the Arduino IDE
+ - In the Arduino IDE:
+   - File -> Preferences:
+       - In the Additional Boards Manager URL (with comma separation if you already have values in this field) add:
+         - `https://mcudude.github.io/MicroCore/package_MCUdude_MicroCore_index.json`
+   - File -> Examples -> 11. Arduino as ISP
+   - Upload this sketch to make your Arduino Uno into an ISP for chip programming
+   
+ - If you want to make changes to the code on the ATTiny13A: Clone this git repository:
 ```
-git clone https://gitlab.com/nold360/lazy_mans_snes_reset.git
+git clone https://github.com/DanielRobertAppel/lazy_mans_snes_reset.git
 cd lazy_mans_snes_reset
 ```
-
- - Install some kind of ISP flashing software. In this example we're going to use "[avrdude](https://www.nongnu.org/avrdude/)"
- - This was tested on Linux only!
-
-You can also just download the precompiled hex-file & flash it using your prefered software: [Download](https://raw.githubusercontent.com/Nold360/lazy_mans_snes_reset/master/lazy_mans_snes_reset.hex)
-
-**Important:** Don't forget to set the fuses correctly!
+ - You can also just download the precompiled hex-file & flash it using your prefered software: [Download](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/lazy_mans_snes_reset.hex)
 
 
-# Flash the attiny [Required]
-First we need to burn the LMSR-Firmware to the microcontroller.
-
-## Flashing precompiled hex-file
- - Connect attiny to your ISP programmer
- - Connect ISP to PC
- - Flash hex-file to attiny using: **make program** (or your prefered flashing software)
- - Program attiny fuses using: **make fuses** (or your prefered flashing software)
+# Programming the ATTiny13A
+Arduino Uno ----> ATTiny13A
 
 
+     13    11
+  5V  | 12  |
+  |   |  |  |
+  v   v  v  v
+__8___7__6__5__
+|              |
+|) AT Tiny13A  |
+|______________|
+  1  2  3  4
+  ^        ^
+  |        |
+  10      GND
+     
+
+In your Arduino IDE, Go to:
+Tools ->  Ports  
+And take note of your arduino's /dev/xxx id.
+Launch your terminal and use the following code to flash your ATTiny13A
+```
+cd /path/where/the/hex/file/is/
+avrdude -F -p t13 -P/dev/ttyACM0 -b 19200 -c stk500v1 -U lfuse:w:0x7a:m -U flash:w:lazy_mans_snes_reset.hex:i
+avrdude -F -p t13 -P/dev/ttyACM0 -b 19200 -c stk500v1 -U lfuse:w:0x7a:m -U hfuse:w:0xff:m
+```
 
 
-# Building the Sourcecode [Optional]
-This step is optinal and just needed, if you want to modify the source code. Tested on Linux only.
 
+# Advanced (Making your own changes to the attiny13a code:
 ## Reqired Software
- - avr-gcc 
- - avr-libc
- - make
- - git
-
-## Build
 ```
-make
+sudo apt get install avr-libc gcc-avr avrdude git make gcc
 ```
-
-If succeeded, you should have a new .hex-file & you're ready to flash your attiny.
-
+## Notable Commands
+```
+make program
+make fuses
+```
 
 
 # Installing the attiny into SNES
