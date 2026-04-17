@@ -18,8 +18,9 @@ This repository contains everything you need to build your own & become lazy!
 ## Software
  - Assuming env: Ubuntu 24.04, using an Arduino Uno
  - Install the Arduino IDE
- - In the Arduino IDE:
-   - File -> Preferences:
+ - Optional: (If you want to test your Arduino's ability to flash the bootloader onto the ATTiny13A before flashing the hex file)
+   - In the Arduino IDE:
+     - File -> Preferences:
        - In the Additional Boards Manager URL (with comma separation if you already have values in this field) add:
          - `https://mcudude.github.io/MicroCore/package_MCUdude_MicroCore_index.json`
    - File -> Examples -> 11. Arduino as ISP
