@@ -67,10 +67,10 @@ avrdude -F -p t13 -P/dev/ttyACM0 -b 19200 -c stk500v1 -U lfuse:w:0x7a:m -U hfuse
 **NOTICE:** This guide has been created to the best of my knowledge and certain. But without any guarantee of correctness! **Make sure that you know what you are doing**, as I'm **not** responsible for any damage or harm you might do to your SNES or yourself!
 
 ## SNES/SFC Reset Button Pins
-![attiny pinout](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/doc/lazy_mans_snes_install_reset.jpg)
+![Reset Button Pins](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/doc/lazy_mans_snes_install_reset.jpg)
 
 ## SNES/SFC Controller Port Pins
-![SNES Junior](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/doc/lazy_mans_snes_install_guide_controller_pins.jpg)
+![Controller Ports Pins](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/doc/lazy_mans_snes_install_guide_controller_pins.jpg)
 
 
 # Advanced (Making your own changes to the attiny13a code)
