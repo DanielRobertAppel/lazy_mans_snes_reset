@@ -63,6 +63,14 @@ avrdude -F -p t13 -P/dev/ttyACM0 -b 19200 -c stk500v1 -U lfuse:w:0x7a:m -U flash
 avrdude -F -p t13 -P/dev/ttyACM0 -b 19200 -c stk500v1 -U lfuse:w:0x7a:m -U hfuse:w:0xff:m
 ```
 
+# Installing the attiny into SNES
+**NOTICE:** This guide has been created to the best of my knowledge and certain. But without any guarantee of correctness! **Make sure that you know what you are doing**, as I'm **not** responsible for any damage or harm you might do to your SNES or yourself!
+
+## SNES/SFC Reset Button Pins
+![attiny pinout](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/doc/lazy_mans_snes_install_reset.jpg)
+
+## SNES/SFC Controller Port Pins
+![SNES Junior](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/doc/lazy_mans_snes_install_guide_controller_pins.jpg)
 
 
 # Advanced (Making your own changes to the attiny13a code)
@@ -76,15 +84,6 @@ make program
 make fuses
 ```
 
-
-# Installing the attiny into SNES
-**NOTICE:** This guide has been created to the best of my knowledge and certain. But without any guarantee of correctness! **Make sure that you know what you are doing**, as I'm **not** responsible for any damage or harm you might do to your SNES or yourself!
-
-## Attiny Pinout
-![attiny pinout](https://raw.githubusercontent.com/Nold360/lazy_mans_snes_reset/master/doc/SNES_Reset_attiny.jpg)
-
-## SNES Junior
-![SNES Junior](https://raw.githubusercontent.com/Nold360/lazy_mans_snes_reset/master/doc/LMSR_in_SNES_Junior.jpg)
 
 # Additinal Ressources
  - [Super Nintendo – Pinouts & Protocol FAQ](https://gamefaqs.gamespot.com/snes/916396-super-nintendo/faqs/5395)
