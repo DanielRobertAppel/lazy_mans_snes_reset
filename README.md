@@ -68,7 +68,7 @@ avrdude -F -p t13 -P/dev/ttyACM0 -b 19200 -c stk500v1 -U lfuse:w:0x7a:m -U hfuse
 
 ## 10K Resistor Installation
 Place a 10K Resistor between pins 1 and 8 on the ATTiny13A
-![10k_Resistor_Installation]()
+![10k_Resistor_Installation](https://github.com/DanielRobertAppel/lazy_mans_snes_reset/blob/fb17e28fce59edada948155c2bf89bc6f6c49b1d/doc/SNES_Reset_attiny.jpg)
 
 ## SNES/SFC Reset Button Pins
 ![Reset Button Pins](https://raw.githubusercontent.com/DanielRobertAppel/lazy_mans_snes_reset/master/doc/lazy_mans_snes_install_reset.jpg)
